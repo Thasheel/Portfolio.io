@@ -53,11 +53,12 @@ a:hover {
 
 /* Header */
 .header {
-    height: 100vh;
+    height: auto;
+    min-height: 60vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 2rem 0;
+    padding: 2rem 0 1rem 0;
     position: relative;
 }
 
@@ -116,14 +117,20 @@ a:hover {
 }
 
 /* Resume Link */
+@keyframes floatResume {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
 .resume-link {
     position: absolute;
-    top: 20px; /* Adjust as needed */
-    right: 20px; /* Adjust as needed */
-    color: var(--primary-color); /* Use primary color for the link */
-    text-decoration: none; /* Remove underline */
+    top: 20px;
+    right: 20px;
+    color: var(--primary-color);
+    text-decoration: none;
     font-size: 1.2rem;
     transition: var(--transition);
+    animation: floatResume 1.5s infinite ease-in-out;
 }
 
 .resume-link:hover {
@@ -152,6 +159,17 @@ a:hover {
     transform: translateY(-3px);
 }
 
+.social-icon svg {
+    background: #fff;
+    border-radius: 8px;
+    padding: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: box-shadow 0.2s;
+}
+.social-icon svg:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+}
+
 /* Animations */
 @keyframes fadeIn {
     from {
@@ -166,7 +184,7 @@ a:hover {
 
 /* Sections */
 .section {
-    padding: 6rem 0;
+    padding: 3rem 0;
     border-bottom: 1px solid var(--light-gray);
     opacity: 0;
     transition: opacity 0.5s ease, transform 0.5s ease;
@@ -582,4 +600,114 @@ blockquote {
     margin-top: 1rem;
     text-align: center;
     animation: fadeIn 0.5s ease;
+} 
+
+#contactSuccessPopup.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.6);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s;
+}
+#contactSuccessPopup.modal.show {
+    display: flex;
+    opacity: 1;
+}
+#contactSuccessPopup .modal-content {
+    background: #181818;
+    border-radius: 12px;
+    padding: 2.5rem 2rem 2rem 2rem;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    min-width: 320px;
+    max-width: 90vw;
+    text-align: center;
+    color: var(--text-color);
+    position: relative;
+    animation: fadeIn 0.5s;
+}
+#contactSuccessPopup .close-modal {
+    position: absolute;
+    right: 1.5rem;
+    top: 1rem;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: color 0.2s;
+}
+#contactSuccessPopup .close-modal:hover {
+    color: #fff;
+}
+#contactSuccessPopup h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+#contactSuccessPopup p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+#contactSuccessPopup .contact-info-inline {
+    display: flex;
+    gap: 2.5rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+#contactSuccessPopup .contact-info-inline div {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+} 
+
+.project-card .visit-btn,
+.project-card .absolute.inset-0.flex.flex-col.items-center.justify-center.z-20 {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s cubic-bezier(.4,0,.2,1);
+}
+
+.project-card:hover .visit-btn,
+.project-card:hover .absolute.inset-0.flex.flex-col.items-center.justify-center.z-20 {
+  opacity: 1;
+  pointer-events: auto;
+} 
+
+/* Hide the floating Visit+line container by default, show only on hover */
+.project-card .absolute.inset-0.flex.flex-col.items-center.justify-center.z-20 {
+  display: none;
+  opacity: 0; /* Keep for transition */
+  pointer-events: none;
+  transition: opacity 0.35s cubic-bezier(.4,0,.2,1);
+}
+
+.project-card:hover .absolute.inset-0.flex.flex-col.items-center.justify-center.z-20 {
+  display: flex;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Optionally, hide the Visit button itself if you want only the line to show on hover */
+/*
+.project-card .visit-btn {
+  display: none;
+}
+.project-card:hover .visit-btn {
+  display: block;
+}
+*/ 
+
+.visit-btn {
+    color: #fff;
+} 
+
+.visit-btn:hover {
+    background-color: #fff;
 } 

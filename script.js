@@ -1,6 +1,6 @@
 // Typing effect
 const typingText = document.querySelector('.typing-text');
-const text = 'a Developer';
+const text = 'a Full Stack Developer';
 let charIndex = 0;
 
 function type() {

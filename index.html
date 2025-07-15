@@ -6,6 +6,12 @@
     <title>mohammedthasheel - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- AOS Animation CDN -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <!-- VanillaTilt.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
 </head>
 <body>
     <header class="header">
@@ -17,20 +23,48 @@
                 <ul>
                     <li><a href="#about">About Me</a></li>  
                     <li><a href="#projects">Projects</a></li>
-                    <li><a href="mailto:mohdthasheelok@gmail.com">Say Hello!</a></li>
+                    <li><a href="#contact">Say Hello!</a></li>
                 </ul>
             </nav>
         </div>
         
         <!-- Social Icons -->
         <div class="social-icons">
-            <a href="http://linkedin.com/in/mohammedthasheel" class="social-icon"><i class="fab fa-linkedin"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-blogger"></i></a>
-            <a href="https://github.com/Thasheel?tab=repositories" class="social-icon"><i class="fab fa-github"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-hackerrank"></i></a>
+            <a href="https://www.linkedin.com/in/mohammedthasheel?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="social-icon" title="LinkedIn" target="_blank" rel="noopener">
+                <!-- Official LinkedIn SVG icon -->
+                <svg class="linkedin-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 448 512" fill="none">
+                    <rect width="448" height="512" rx="80" fill="#0A66C2"/>
+                    <path d="M120 208h56v184h-56V208zm28-92c18 0 32 14 32 32s-14 32-32 32-32-14-32-32 14-32 32-32zm64 92h54v25h1c8-15 28-31 57-31 61 0 72 40 72 92v106h-56V308c0-24-1-55-36-55-36 0-41 28-41 53v86h-56V208z" fill="#fff"/>
+                </svg>
+            </a>
+            <a href="https://leetcode.com/u/RSO0eYqQn4/" class="social-icon" title="LeetCode" target="_blank" rel="noopener">
+                <!-- Official LeetCode SVG icon -->
+                <svg class="leetcode-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 50 50" fill="none">
+                    <g>
+                        <path d="M19.5 36.5L13.5 30.5C8.5 25.5 8.5 17.5 13.5 12.5L25 1L36.5 12.5C41.5 17.5 41.5 25.5 36.5 30.5L30.5 36.5" stroke="#FFA116" stroke-width="4" stroke-linecap="round"/>
+                        <path d="M25 47C36.0457 47 45 38.0457 45 27C45 15.9543 36.0457 7 25 7C13.9543 7 5 15.9543 5 27C5 32.5228 8.13401 37.5228 13.5 41.5" stroke="#292D3D" stroke-width="4" stroke-linecap="round"/>
+                        <path d="M36.5 13.5L13.5 36.5" stroke="#292D3D" stroke-width="4" stroke-linecap="round"/>
+                    </g>
+                </svg>
+            </a>
+            <a href="https://github.com/Thasheel?tab=repositories" class="social-icon" title="GitHub" target="_blank" rel="noopener">
+                <!-- Official GitHub SVG icon -->
+                <svg class="github-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.021c0 4.428 2.865 8.184 6.839 9.504.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.339-2.221-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.025A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.295 2.748-1.025 2.748-1.025.546 1.378.202 2.397.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.847-2.337 4.695-4.566 4.944.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.749 0 .267.18.577.688.479C19.138 20.2 22 16.447 22 12.021 22 6.484 17.523 2 12 2z" fill="#181717"/>
+                </svg>
+            </a>
+            <a href="https://www.hackerrank.com/profile/sonuoraykt" class="social-icon" title="HackerRank" target="_blank" rel="noopener">
+                <!-- Official HackerRank SVG icon -->
+                <svg class="hackerrank-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 50 50" fill="none">
+                    <g>
+                        <polygon points="25,5 45,15 45,35 25,45 5,35 5,15" fill="#2EC866"/>
+                        <text x="25" y="33" text-anchor="middle" font-size="18" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-weight="bold">H</text>
+                    </g>
+                </svg>
+            </a>
         </div>
         <!-- Resume Link -->
-        <a href="https://drive.google.com/file/d/1IYeA53dyj78lOhPse11QKAXffVrdXVmb/view" class="resume-link">Resume</a>
+        <a href="https://drive.google.com/file/d/1AFXdC4HIZrxXD5ALVD3h8YPJNuvjSdJ5/view" class="resume-link">Resume</a>
     </header>
 
     <section id="about" class="section">
@@ -42,7 +76,7 @@
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Why, hello there! My name is Mohammed Thasheel. I'm a web developer with a passion for creating beautiful, functional websites and applications.</p>
+                    <p>Why, hello there! My name is Mohammed Thasheel. I'm a Full Stack Developer with a passion for creating beautiful, functional websites and applications.</p>
                     <p>I'm always on the lookout for opportunities that could broaden and enhance my skillset. I enjoy working on challenging projects and love collaborating with others to bring their ideas to life.</p>
                     <p>Let's get to work, shall we?</p>
                     
@@ -61,88 +95,134 @@
         </div>
     </section>
 
-    <section id="projects" class="section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-number">02.</span>
-                <h3>Development</h3>
+    <section id="projects" class="section bg-transparent">
+        <div class="container mx-auto px-4">
+            <div class="section-header mb-4">
+                <span class="section-number text-primary">02.</span>
+                <h3 class="text-lg font-bold uppercase tracking-widest text-secondary">Development</h3>
             </div>
-            <h2 class="section-title">Things I've Built</h2>
-            <div class="view-more">
-                <!-- <a href="#">view the archive</a> -->
-            </div>
-            
-            <div class="projects-grid">
+            <h2 class="section-title text-3xl font-extrabold mb-8 text-white">Things I've Built</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="projectsGrid">
                 <!-- Project 1 -->
-                <div class="project-card">
-                    <h3 class="project-title">STEYP🚀</h3>
-                    <p class="project-description">Designed and developed a responsive landing page using HTML5 and CSS3, and deployed it on GitHub Pages   </p>
-                    <div class="project-links">
-                        <!-- <a href="#" class="project-link">Source</a> -->
-                        <a href="https://thasheel.github.io/Steyp.io/" class="project-link">Demo</a>
+                <div class="project-card steyp-project-card relative overflow-hidden rounded-2xl shadow-xl bg-white bg-opacity-10 backdrop-blur-lg border border-white border-opacity-20 transition-all duration-300" data-tilt data-aos="fade-up">
+                    <video class="absolute inset-0 w-full h-full object-cover z-0 opacity-30 pointer-events-none" src="videos/steyp.mp4" autoplay loop muted playsinline></video>
+                    <div class="relative z-10 p-6 flex flex-col h-full">
+                        <div class="absolute inset-0 flex flex-col items-center justify-center z-20">
+                            <a href="https://thasheel.github.io/Steyp.io/" target="_blank" rel="noopener" class="visit-btn px-5 py-2 rounded-full bg-gray-900 text-white font-semibold shadow-lg transition-all duration-300 hover:shadow-[0_0_16px_4px_rgba(59,130,246,0.6)] focus:outline-none border-2 border-white border-opacity-10">Visit</a>
+                            <div class="w-1 h-8 bg-gradient-to-b from-blue-400 via-blue-500 to-transparent animate-glow rounded-full"></div>
+                        </div>
+                        <h3 class="project-title text-xl font-bold text-white mb-2">STEYP🚀</h3>
+                        <p class="project-description text-gray-200 mb-4">Designed and developed a responsive landing page using HTML5 and CSS3, and deployed it on GitHub Pages</p>
+                        <div class="flex gap-3 mb-4">
+                        </div>
+                        <div class="flex gap-2 mt-auto flex-wrap">
+                            <span class="px-2 py-1 rounded bg-gray-800 text-primary text-xs font-mono">HTML</span>
+                            <span class="px-2 py-1 rounded bg-gray-800 text-primary text-xs font-mono">CSS</span>
+                            <span class="px-2 py-1 rounded bg-gray-800 text-primary text-xs font-mono">JS</span>
+                        </div>
                     </div>
-                    <div class="project-tech">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JS</span>
-                    </div>
-                    <a href="#" class="arrow-link">→</a>
+                    <div class="absolute inset-0 rounded-2xl pointer-events-none border-2 border-transparent transition-all duration-300 group-hover:border-primary group-hover:shadow-primary-glow"></div>
                 </div>
-                
                 <!-- Project 2 -->
-                <div class="project-card">
-                    <h3 class="project-title">SPOTIX⚡</h3>
-                    <p class="project-description">Designed and developed a responsive food-themed landing page using HTML5 and CSS3, featuring a clean layout with Flexbox and
-                         visually appealing sections to showcase services</p>
-                    <div class="project-links">
-                        <!-- <a href="#" class="project-link">Source</a> -->
-                        <a href="https://thasheel.github.io/Spotix.io/" class="project-link">Demo</a>
+                <div class="project-card spotix-project-card relative overflow-hidden rounded-2xl shadow-xl bg-white bg-opacity-10 backdrop-blur-lg border border-white border-opacity-20 transition-all duration-300" data-tilt data-aos="fade-up" data-aos-delay="100">
+                    <video class="absolute inset-0 w-full h-full object-cover z-0 opacity-30 pointer-events-none" src="videos/spotix.mp4" autoplay loop muted playsinline></video>
+                    <div class="relative z-10 p-6 flex flex-col h-full">
+                        <div class="absolute inset-0 flex flex-col items-center justify-center z-20">
+                            <a href="https://thasheel.github.io/Spotix.io/" target="_blank" rel="noopener" class="visit-btn px-5 py-2 rounded-full bg-gray-900 text-white font-semibold shadow-lg transition-all duration-300 hover:shadow-[0_0_16px_4px_rgba(59,130,246,0.6)] focus:outline-none border-2 border-white border-opacity-10">Visit</a>
+                            <div class="w-1 h-8 bg-gradient-to-b from-blue-400 via-blue-500 to-transparent animate-glow rounded-full"></div>
+                        </div>
+                        <h3 class="project-title text-xl font-bold text-white mb-2">SPOTIX⚡</h3>
+                        <p class="project-description text-gray-200 mb-4">Designed and developed a responsive food-themed landing page using HTML5 and CSS3, featuring a clean layout with Flexbox and visually appealing sections to showcase services</p>
+                        <div class="flex gap-3 mb-4">
+                        </div>
+                        <div class="flex gap-2 mt-auto flex-wrap">
+                            <span class="px-2 py-1 rounded bg-gray-800 text-primary text-xs font-mono">HTML</span>
+                            <span class="px-2 py-1 rounded bg-gray-800 text-primary text-xs font-mono">CSS</span>
+                            <span class="px-2 py-1 rounded bg-gray-800 text-primary text-xs font-mono">JS</span>
+                        </div>
                     </div>
-                    <div class="project-tech">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JS</span>
-                    </div>
-                    <a href="#" class="arrow-link">→</a>
+                    <div class="absolute inset-0 rounded-2xl pointer-events-none border-2 border-transparent transition-all duration-300 group-hover:border-primary group-hover:shadow-primary-glow"></div>
                 </div>
-                
                 <!-- Project 3 -->
-                 <div class="project-card">
-                    <h3 class="project-title">Aws-EC2 Deployment☁️ </h3>
-                    <p class="project-description">Deployed a web application on AWS EC2 instance, ensuring high availability and scalability.</p>
-                    <div class="project-links">
-                        <!-- <a href="#" class="project-link">Source</a> -->
-                        <a href="https://github.com/Thasheel/Aws-Ec2-Instance-Deployment" class="project-link">Demo</a>
+                <div class="project-card awsec2-project-card relative overflow-hidden rounded-2xl shadow-xl bg-white bg-opacity-10 backdrop-blur-lg border border-white border-opacity-20 transition-all duration-300" data-tilt data-aos="fade-up" data-aos-delay="200">
+                    <video class="absolute inset-0 w-full h-full object-cover z-0 opacity-30 pointer-events-none" src="videos/AwsEc2Deployment.mp4" autoplay loop muted playsinline></video>
+                    <div class="relative z-10 p-6 flex flex-col h-full">
+                        <div class="absolute inset-0 flex flex-col items-center justify-center z-20">
+                            <a href="https://github.com/Thasheel/Aws-Ec2-Instance-Deployment" target="_blank" rel="noopener" class="visit-btn px-5 py-2 rounded-full bg-gray-900 text-white font-semibold shadow-lg transition-all duration-300 hover:shadow-[0_0_16px_4px_rgba(59,130,246,0.6)] focus:outline-none border-2 border-white border-opacity-10">Visit</a>
+                            <div class="w-1 h-8 bg-gradient-to-b from-blue-400 via-blue-500 to-transparent animate-glow rounded-full"></div>
+                        </div>
+                        <h3 class="project-title text-xl font-bold text-white mb-2">Aws-EC2 Deployment☁️ </h3>
+                        <p class="project-description text-gray-200 mb-4">Deployed a web application on AWS EC2 instance, ensuring high availability and scalability.</p>
+                        <div class="flex gap-3 mb-4">
+                        </div>
+                        <div class="flex gap-2 mt-auto flex-wrap">
+                            <span class="px-2 py-1 rounded bg-gray-800 text-primary text-xs font-mono">AWS</span>
+                            <span class="px-2 py-1 rounded bg-gray-800 text-primary text-xs font-mono">JENKINS</span>
+                            <span class="px-2 py-1 rounded bg-gray-800 text-primary text-xs font-mono">LINUX</span>
+                        </div>
                     </div>
-                    <div class="project-tech">
-                        <span>AWS</span>
-                        <span>JENKINS</span>
-                        <span>LINUX</span>
-
-                    </div>
-                    <a href="#" class="arrow-link">→</a>
+                    <div class="absolute inset-0 rounded-2xl pointer-events-none border-2 border-transparent transition-all duration-300 group-hover:border-primary group-hover:shadow-primary-glow"></div>
                 </div>
-               
-                <!-- Project 4
-                <div class="project-card">
-                    <h3 class="project-title">Project Four 📱</h3>
-                    <p class="project-description">A brief description of your fourth project goes here. Explain what it does and why it's interesting.</p>
-                    <div class="project-links">
-                        <a href="#" class="project-link">Source</a>
-                        <a href="#" class="project-link">Demo</a>
+                <!-- Project 4 -->
+                <div class="project-card todoapp-project-card relative overflow-hidden rounded-2xl shadow-xl bg-white bg-opacity-10 backdrop-blur-lg border border-white border-opacity-20 transition-all duration-300" data-tilt data-aos="fade-up" data-aos-delay="300">
+                    <video class="absolute inset-0 w-full h-full object-cover z-0 opacity-30 pointer-events-none" src="videos/Todoapp.mp4" autoplay loop muted playsinline></video>
+                    <div class="relative z-10 p-6 flex flex-col h-full">
+                        <div class="absolute inset-0 flex flex-col items-center justify-center z-20">
+                            <a href="https://thasheel.pythonanywhere.com/" target="_blank" rel="noopener" class="visit-btn px-5 py-2 rounded-full bg-gray-900 text-white font-semibold shadow-lg transition-all duration-300 hover:shadow-[0_0_16px_4px_rgba(59,130,246,0.6)] focus:outline-none border-2 border-white border-opacity-10">Visit</a>
+                            <div class="w-1 h-8 bg-gradient-to-b from-blue-400 via-blue-500 to-transparent animate-glow rounded-full"></div>
+                        </div>
+                        <h3 class="project-title text-xl font-bold text-white mb-2">TODO APP 🛍️</h3>
+                        <p class="project-description text-gray-200 mb-4">Developed a Django-based Todo App, deployed on PythonAnywhere, allowing users to manage their tasks efficiently.</p>
+                        <div class="flex gap-3 mb-4">
+                        </div>
+                        <div class="flex gap-2 mt-auto flex-wrap">
+                            <span class="px-2 py-1 rounded bg-gray-800 text-primary text-xs font-mono">Django</span>
+                            <span class="px-2 py-1 rounded bg-gray-800 text-primary text-xs font-mono">PythonAnywhere</span>
+                        </div>
                     </div>
-                    <div class="project-tech">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JS</span>
-                    </div>
-                    <a href="#" class="arrow-link">→</a>
+                    <div class="absolute inset-0 rounded-2xl pointer-events-none border-2 border-transparent transition-all duration-300 group-hover:border-primary group-hover:shadow-primary-glow"></div>
                 </div>
-            </div> -->
-            
-            <!-- <div class="show-more">
-                <button id="show-more-btn">Show More</button>
-            </div> -->
+                <!-- Project 5 -->
+                <div class="project-card heartattack-project-card relative overflow-hidden rounded-2xl shadow-xl bg-white bg-opacity-10 backdrop-blur-lg border border-white border-opacity-20 transition-all duration-300" data-tilt data-aos="fade-up" data-aos-delay="400">
+                    <video class="absolute inset-0 w-full h-full object-cover z-0 opacity-30 pointer-events-none" src="videos/HeartAttack.mp4" autoplay loop muted playsinline></video>
+                    <div class="relative z-10 p-6 flex flex-col h-full">
+                        <div class="absolute inset-0 flex flex-col items-center justify-center z-20">
+                            <a href="https://thasheel.github.io/HeartAttackRiskPrediction.io/" target="_blank" rel="noopener" class="visit-btn px-5 py-2 rounded-full bg-gray-900 text-white font-semibold shadow-lg transition-all duration-300 hover:shadow-[0_0_16px_4px_rgba(59,130,246,0.6)] focus:outline-none border-2 border-white border-opacity-10">Visit</a>
+                            <div class="w-1 h-8 bg-gradient-to-b from-blue-400 via-blue-500 to-transparent animate-glow rounded-full"></div>
+                        </div>
+                        <h3 class="project-title text-xl font-bold text-white mb-2">Heart Attack Prediction❤️</h3>
+                        <p class="project-description text-gray-200 mb-4">Developed a machine learning model to predict heart attacks based on patient data, utilizing Python and its libraries for data analysis and visualization.</p>
+                        <div class="flex gap-3 mb-4">
+                        </div>
+                        <div class="flex gap-2 mt-auto flex-wrap">
+                            <span class="px-2 py-1 rounded bg-gray-800 text-primary text-xs font-mono">Python</span>
+                            <span class="px-2 py-1 rounded bg-gray-800 text-primary text-xs font-mono">Machine Learning</span>
+                            <span class="px-2 py-1 rounded bg-gray-800 text-primary text-xs font-mono">Data Analysis</span>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 rounded-2xl pointer-events-none border-2 border-transparent transition-all duration-300 group-hover:border-primary group-hover:shadow-primary-glow"></div>
+                </div>
+                <!-- Project 6 -->
+                <div class="project-card momsgarden-project-card relative overflow-hidden rounded-2xl shadow-xl bg-white bg-opacity-10 backdrop-blur-lg border border-white border-opacity-20 transition-all duration-300" data-tilt data-aos="fade-up" data-aos-delay="500">
+                    <video class="absolute inset-0 w-full h-full object-cover z-0 opacity-30 pointer-events-none" src="videos/momsgarden.mp4" autoplay loop muted playsinline></video>
+                    <div class="relative z-10 p-6 flex flex-col h-full">
+                        <div class="absolute inset-0 flex flex-col items-center justify-center z-20">
+                            <a href="https://thasheel.github.io/MomsGarden.io/" target="_blank" rel="noopener" class="visit-btn px-5 py-2 rounded-full bg-gray-900 text-white font-semibold shadow-lg transition-all duration-300 hover:shadow-[0_0_16px_4px_rgba(59,130,246,0.6)] focus:outline-none border-2 border-white border-opacity-10">Visit</a>
+                            <div class="w-1 h-8 bg-gradient-to-b from-blue-400 via-blue-500 to-transparent animate-glow rounded-full"></div>
+                        </div>
+                        <h3 class="project-title text-xl font-bold text-white mb-2">Moms Garden 🌱</h3>
+                        <p class="project-description text-gray-200 mb-4">Developed a responsive website for Moms Garden, utilizing HTML, CSS, and JavaScript to create a user-friendly interface.</p>
+                        <div class="flex gap-3 mb-4">
+                        </div>
+                        <div class="flex gap-2 mt-auto flex-wrap">
+                            <span class="px-2 py-1 rounded bg-gray-800 text-primary text-xs font-mono">HTML</span>
+                            <span class="px-2 py-1 rounded bg-gray-800 text-primary text-xs font-mono">CSS</span>
+                            <span class="px-2 py-1 rounded bg-gray-800 text-primary text-xs font-mono">JS</span>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 rounded-2xl pointer-events-none border-2 border-transparent transition-all duration-300 group-hover:border-primary group-hover:shadow-primary-glow"></div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -156,6 +236,23 @@
             <div class="contact-content">
                 <p>Interested in working together? Let's have a chat. I'd love to collaborate or help out with a project. Whether you have a question or just want to say hi, hit me up!</p>
                 <a href="mailto:mohdthasheelok@gmail.com" class="cta-button">Say Hello!</a>
+                <div class="contact-info-inline" style="display:flex; gap:2.5rem; justify-content:center; align-items:center; margin-top:2rem; flex-wrap:wrap; font-size:1.1rem;">
+                    <div style="display:flex; align-items:center; gap:0.5rem;">
+                        <!-- Email Icon -->
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 4.5A2.5 2.5 0 0 1 4.5 2h15A2.5 2.5 0 0 1 22 4.5v15a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 2 19.5v-15Zm2.5-.5a.5.5 0 0 0-.5.5v.217l8 5.333 8-5.333V4.5a.5.5 0 0 0-.5-.5h-15Zm15 17a.5.5 0 0 0 .5-.5V7.217l-7.5 5-7.5-5V19.5a.5.5 0 0 0 .5.5h15Z" fill="#0ae0a0"/></svg>
+                        <a href="mailto:mohdthasheelok@gmail.com" style="color:var(--primary-color);">mohdthasheelok@gmail.com</a>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:0.5rem;">
+                        <!-- Phone Icon -->
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.07 21 3 13.93 3 5a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.24 1.01l-2.2 2.2Z" fill="#0ae0a0"/></svg>
+                        <a href="tel:+917559829483" style="color:var(--primary-color);">7559829483</a>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:0.5rem;">
+                        <!-- Location Icon -->
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C7.03 2 3 6.03 3 11c0 5.25 7.11 10.74 8.13 11.5a1 1 0 0 0 1.13 0C13.89 21.74 21 16.25 21 11c0-4.97-4.03-9-9-9Zm0 13a4 4 0 1 1 0-8 4 4 0 0 1 0 8Z" fill="#0ae0a0"/></svg>
+                        <span style="color:var(--primary-color);">Bangalore</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -197,5 +294,59 @@
             </form>
         </div>
     </div>
+    <!-- Success Toast -->
+    <div id="contactSuccessToast" style="display:none; position:fixed; left:50%; top:50%; transform:translate(-50%,-50%); background:#222; color:var(--primary-color); padding:1rem 2rem; border-radius:8px; font-size:1.1rem; box-shadow:0 2px 12px rgba(0,0,0,0.18); z-index:3000; min-width:200px; text-align:center;">Will connect you soon.</div>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var contactForm = document.getElementById('contactForm');
+        var contactModal = document.getElementById('contactModal');
+        var contactSuccessToast = document.getElementById('contactSuccessToast');
+        var closeModalBtns = document.querySelectorAll('.close-modal');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                contactModal.style.display = 'none';
+                contactSuccessToast.style.display = 'block';
+                setTimeout(function() {
+                    contactSuccessToast.style.display = 'none';
+                }, 2000);
+            });
+        }
+        closeModalBtns.forEach(function(btn) {
+            btn.onclick = function() {
+                if (contactModal) contactModal.style.display = 'none';
+            };
+        });
+        window.onclick = function(event) {
+            if (event.target == contactModal) contactModal.style.display = 'none';
+        };
+    });
+    </script>
+    <!-- AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+    AOS.init({
+        duration: 900,
+        once: true,
+        offset: 80
+    });
+    VanillaTilt.init(document.querySelectorAll(".project-card"), {
+        max: 18,
+        speed: 400,
+        glare: true,
+        "max-glare": 0.18,
+        scale: 1.04,
+        gyroscope: true
+    });
+    </script>
+    <style>
+      @keyframes glow {
+        0%, 100% { box-shadow: 0 0 8px 2px #60a5fa, 0 0 0 0 #60a5fa44; opacity: 1; }
+        50% { box-shadow: 0 0 18px 6px #3b82f6, 0 0 0 0 #3b82f644; opacity: 0.7; }
+      }
+      .animate-glow {
+        animation: glow 1.6s ease-in-out infinite;
+      }
+    </style>
 </body>
 </html> 

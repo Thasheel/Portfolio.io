@@ -8,27 +8,39 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('.about-content').appendChild(skillsSection);
     }
     
-    // Array of skills to display
+    // Array of skills to display with Font Awesome icon classes
     const skills = [
-        { name: 'HTML', level: 90 },
-        { name: 'CSS', level: 85 },
-        { name: 'Java', level: 80 },
-        { name: 'Bootstrap', level: 75 },
-        { name: 'MongoDB', level: 70 },
-        { name: 'Python', level: 65 },
-        { name: 'Django', level: 60 },
-        { name: 'AWS', level: 55 },
-        { name: 'Azure', level: 50 },
-        { name: 'UI', level: 60 },
-        { name: 'UX', level: 45 },
-        { name: 'GITHUB', level: 75 },
-        { name: 'JENKINS', level: 55 },
-        // { name: 'SASS', level: 80 },
-        // { name: 'Firebase', level: 70 },
-        // { name: 'Godot', level: 40 },
-        // { name: 'Flutter', level: 50 },
-        // { name: 'Ionic', level: 45 }
+        { name: 'HTML', icon: 'fab fa-html5', level: 90 },
+        { name: 'CSS', icon: 'fab fa-css3-alt', level: 85 },
+        { name: 'Java', icon: 'fab fa-java', level: 80 },
+        { name: 'Bootstrap', icon: 'fab fa-bootstrap', level: 75 },
+        { name: 'MongoDB', icon: 'fas fa-database', level: 70 },
+        { name: 'Python', icon: 'fab fa-python', level: 65 },
+        { name: 'Django', icon: 'fas fa-leaf', level: 60 }, // No official FA icon, using leaf
+        { name: 'AWS', icon: 'fab fa-aws', level: 55 },
+        { name: 'Azure', icon: 'fab fa-microsoft', level: 50 },
+        { name: 'UI', icon: 'fas fa-paint-brush', level: 60 },
+        { name: 'UX', icon: 'fas fa-user-astronaut', level: 45 },
+        { name: 'GITHUB', icon: 'fab fa-github', level: 75 },
+        { name: 'JENKINS', icon: 'fas fa-cogs', level: 55 },
     ];
+
+    // Mapping of icon names to brand colors
+    const skillColors = {
+        'html5': '#e34f26',
+        'css3-alt': '#1572b6',
+        'java': '#007396',
+        'bootstrap': '#7952b3',
+        'database': '#47A248',
+        'python': '#3776ab',
+        'leaf': '#092e20',
+        'aws': '#ff9900',
+        'microsoft': '#0078d4',
+        'paint-brush': '#e67e22',
+        'user-astronaut': '#6e5494',
+        'github': '#181717',
+        'cogs': '#d24939'
+    };
 
     // Responsive configuration
     function getConfig() {
@@ -50,6 +62,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Get initial config
     let config = getConfig();
 
+    function getRandomColor() {
+        // Generate a random hex color
+        return '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
+    }
+
     // Create a sphere of skills
     function createSkillsSphere() {
         const items = [];
@@ -57,13 +74,25 @@ document.addEventListener('DOMContentLoaded', function() {
             // Create skill element
             const item = document.createElement('div');
             item.className = 'skill-item';
-            item.textContent = skill.name;
+            // Add icon
+            const icon = document.createElement('i');
+            icon.className = skill.icon + ' skill-icon skill-' + skill.icon.split(' ').pop();
+            icon.title = skill.name;
+            // Apply professional colors directly as inline styles
+            const iconClass = skill.icon.split(' ').pop();
+            if (skillColors[iconClass]) {
+                icon.style.color = skillColors[iconClass];
+            }
+            item.appendChild(icon);
+            // Optionally add label below icon
+            // const label = document.createElement('div');
+            // label.className = 'skill-label';
+            // label.textContent = skill.name;
+            // item.appendChild(label);
             config.container.appendChild(item);
-            
             // Set initial position with better distribution
             const phi = Math.acos(-1 + (2 * index) / skills.length);
             const theta = Math.sqrt(skills.length * Math.PI) * phi;
-            
             // Store position data
             items.push({
                 element: item,
@@ -87,8 +116,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
-                color: var(--primary-color);
-                text-shadow: 0 0 10px rgba(10, 224, 160, 0.3);
                 cursor: default;
                 user-select: none;
                 font-weight: bold;
@@ -97,11 +124,28 @@ document.addEventListener('DOMContentLoaded', function() {
                 font-family: 'Courier New', monospace;
                 white-space: nowrap;
             }
-            
-            .skill-item:hover {
-                color: #ffffff;
-                text-shadow: 0 0 15px rgba(10, 224, 160, 0.8);
-                transform: translate(-50%, -50%) scale(1.2);
+            .skill-icon {
+                font-size: 2.2em;
+                transition: transform 0.2s, filter 0.2s, color 0.2s;
+                display: block;
+                margin: 0 auto;
+            }
+            .skill-html5 { color: #e34f26 !important; }         /* HTML5 orange */
+            .skill-css3-alt { color: #1572b6 !important; }      /* CSS3 blue */
+            .skill-java { color: #007396 !important; }          /* Java blue */
+            .skill-bootstrap { color: #7952b3 !important; }     /* Bootstrap purple */
+            .skill-database { color: #47A248 !important; }      /* MongoDB green */
+            .skill-python { color: #3776ab !important; }        /* Python blue */
+            .skill-leaf { color: #092e20 !important; }          /* Django green-black */
+            .skill-aws { color: #ff9900 !important; }           /* AWS orange */
+            .skill-microsoft { color: #0078d4 !important; }     /* Azure blue */
+            .skill-paint-brush { color: #e67e22 !important; }   /* UI orange */
+            .skill-user-astronaut { color: #6e5494 !important; }/* UX purple (using GitHub purple) */
+            .skill-github { color: #181717 !important; }        /* GitHub black */
+            .skill-cogs { color: #d24939 !important; }          /* Jenkins red */
+            .skill-item:hover .skill-icon {
+                filter: drop-shadow(0 0 12px currentColor);
+                transform: scale(1.25) rotate(-8deg);
             }
         `;
         document.head.appendChild(style);
