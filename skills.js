@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
         { name: 'UX', icon: 'fas fa-user-astronaut', level: 45 },
         { name: 'GITHUB', icon: 'fab fa-github', level: 75 },
         { name: 'JENKINS', icon: 'fas fa-cogs', level: 55 },
+          { name: 'Svelte', icon: 'fas fa-code', level: 70 },
     ];
 
     // Mapping of icon names to brand colors
